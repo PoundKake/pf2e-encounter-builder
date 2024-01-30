@@ -1,4 +1,6 @@
-# pf2e-encounter-builder Developer Notes
+# PF2E Encounter Builder
+
+## Developer Notes
 
 [![npm version](https://badge.fury.io/js/npm.svg)](https://badge.fury.io/js/npm)
 [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
