@@ -1,6 +1,6 @@
 # pf2e-encounter-builder Developer Notes
 
-![Static Badge](https://img.shields.io/badge/:badgeContent)
+[![Npm package version](https://badgen.net/npm/v/express)](https://npmjs.com/package/express)
 
 This template should help get you started developing with Vue 3 in Vite.
 
