@@ -1,6 +1,7 @@
 # pf2e-encounter-builder Developer Notes
 
 [![npm version](https://badge.fury.io/js/npm.svg)](https://badge.fury.io/js/npm)
+[![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
 
 This template should help get you started developing with Vue 3 in Vite.
 
