@@ -1,6 +1,6 @@
 # pf2e-encounter-builder Developer Notes
 
-[![Npm package version](https://badgen.net/npm/v/express)](https://npmjs.com/package/express)
+[![npm version](https://badge.fury.io/js/npm.svg)](https://badge.fury.io/js/npm)
 
 This template should help get you started developing with Vue 3 in Vite.
 
