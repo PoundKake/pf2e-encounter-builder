@@ -25,8 +25,8 @@ export const usePartyLevelStore = defineStore('partylevel', () => {
     partylevel.value = level
   }
 
-  return { 
-    partylevel, 
+  return {
+    partylevel,
     partylevelMinus4,
     partylevelMinus3,
     partylevelMinus2,
@@ -37,6 +37,6 @@ export const usePartyLevelStore = defineStore('partylevel', () => {
     partylevelPlus4,
     increment,
     decrement,
-    setPartyLevel, 
-}
+    setPartyLevel
+  }
 })
