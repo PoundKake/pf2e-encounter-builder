@@ -29,8 +29,55 @@ const defaultXpBudgetValues = [
   }
 ]
 
+var currentXpBudgetValues = [
+  {
+    threat: '',
+    xp: ''
+  },
+  {
+    threat: '',
+    xp: ''
+  },
+  {
+    threat: '',
+    xp: ''
+  },
+  {
+    threat: '',
+    xp: ''
+  },
+  {
+    threat: '',
+    xp: ''
+  }
+]
+
 export const useXpBudgetStore = defineStore('xpbudget', () => {
   const xpbudget = ref(0)
+  // Trivial encounter XP budget. Default assumes party of 4.
+  console.log(defaultXpBudgetValues[0])
+  currentXpBudgetValues[0].threat = defaultXpBudgetValues[0].threat
+  currentXpBudgetValues.Trivial = ref(40)
 
-  return { xpbudget, defaultXpBudgetValues }
+  // Low encounter XP budget. Default assumes party of 4.
+  console.log(defaultXpBudgetValues[1])
+  currentXpBudgetValues[1].threat = defaultXpBudgetValues[1].threat
+  currentXpBudgetValues.Low = ref(60)
+
+  // Moderate encounter XP budget. Default assumes party of 4.
+  console.log(defaultXpBudgetValues[2])
+  currentXpBudgetValues[2].threat = defaultXpBudgetValues[2].threat
+  currentXpBudgetValues.Moderate = ref(80)
+
+  // Severe encounter XP budget. Default assumes party of 4.
+  console.log(defaultXpBudgetValues[3])
+  currentXpBudgetValues[3].threat = defaultXpBudgetValues[3].threat
+  currentXpBudgetValues.Severe = ref(120)
+
+  // Extreme encounter XP budget. Default assumes party of 4.
+  console.log(defaultXpBudgetValues[4])
+  currentXpBudgetValues[4].threat = defaultXpBudgetValues[4].threat
+  currentXpBudgetValues.Extreme = ref(160)
+
+  return { xpbudget, defaultXpBudgetValues, currentXpBudgetValues }
 })
