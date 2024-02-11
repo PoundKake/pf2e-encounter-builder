@@ -26,7 +26,7 @@ const elevationValue = 2
       <v-col></v-col>
       <v-col>
         <v-sheet class="flex-class">
-          <PlayerCountManager/>
+          <PlayerCountManager />
         </v-sheet>
       </v-col>
       <v-col></v-col>

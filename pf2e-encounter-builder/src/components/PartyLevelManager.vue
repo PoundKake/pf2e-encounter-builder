@@ -1,5 +1,5 @@
 <script setup>
-import { usePartyLevelStore } from '@/stores/partylevel';
+import { usePartyLevelStore } from '@/stores/partylevel'
 
 const partylevelstore = usePartyLevelStore()
 

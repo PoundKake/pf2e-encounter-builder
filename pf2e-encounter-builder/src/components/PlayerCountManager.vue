@@ -1,7 +1,7 @@
 <script setup>
 import { usePlayerCountStore } from '@/stores/playercount'
 
-const playercountstore = usePlayerCountStore() 
+const playercountstore = usePlayerCountStore()
 
 const elevationValue = 2
 </script>
