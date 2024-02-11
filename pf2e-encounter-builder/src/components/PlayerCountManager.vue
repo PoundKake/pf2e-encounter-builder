@@ -1,4 +1,8 @@
 <script setup>
+import { usePlayerCountStore } from '@/stores/playercount'
+
+const playercountstore = usePlayerCountStore() 
+
 const elevationValue = 2
 </script>
 <template>
@@ -12,7 +16,7 @@ const elevationValue = 2
         </v-row>
         <v-row align="center" justify="center">
           <v-col align="center">
-            <v-container> {{ partylevelstore.partylevel }} </v-container>
+            <v-text-field label=""> {{ playercountstore.defaultPlayerCount }} </v-text-field>
           </v-col>
           <v-col>
             <v-row>
@@ -34,6 +38,6 @@ const elevationValue = 2
 
 <style scoped>
 h1 {
-  font-size: 100%;
+  font-size: 1.5em;
 }
 </style>
