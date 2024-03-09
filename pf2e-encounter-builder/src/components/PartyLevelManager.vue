@@ -1,8 +1,17 @@
 <script setup>
+import { ref } from 'vue'
 import { usePartyLevelStore } from '@/stores/partylevel'
+import { watch } from 'vue'
 
 const partylevelstore = usePartyLevelStore()
 
+const partylevel = ref(partylevelstore.defaultPartyLevel)
+
+// update party level store with the value of the party level
+watch(partylevel, (updatedPartyLevel) => {
+  partylevelstore.partylevel = updatedPartyLevel
+  console.log(`Party Level Store Value: ${partylevelstore.partylevel}`)
+})
 const elevationValue = 2
 </script>
 <template>
@@ -16,17 +25,17 @@ const elevationValue = 2
         </v-row>
         <v-row align="center" justify="center">
           <v-col align="center">
-            <v-text-field label=""> {{ partylevelstore.partylevel }} </v-text-field>
+            <v-text-field label=""> {{ partylevel }} </v-text-field>
           </v-col>
           <v-col>
             <v-row>
               <v-col align="center">
-                <v-btn density="compact" icon="mdi-plus"></v-btn>
+                <v-btn @click="partylevel++" icon="add"></v-btn>
               </v-col>
             </v-row>
             <v-row>
               <v-col align="center">
-                <v-btn density="compact" icon="mdi-plus"></v-btn>
+                <v-btn @click="partylevel--" icon="remove"></v-btn>
               </v-col>
             </v-row>
           </v-col>

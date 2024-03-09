@@ -1,8 +1,16 @@
 <script setup>
 import { usePlayerCountStore } from '@/stores/playercount'
+import { ref, watch } from 'vue'
 
 const playercountstore = usePlayerCountStore()
 
+const playercount = ref(playercountstore.defaultPlayerCount)
+
+// update party level store with the value of the party level
+watch(playercount, (updatedPlayerCount) => {
+  playercountstore.playerCount = updatedPlayerCount
+  console.log(`Player Count Store Value: ${playercountstore.playerCount}`)
+})
 const elevationValue = 2
 </script>
 <template>
@@ -16,17 +24,17 @@ const elevationValue = 2
         </v-row>
         <v-row align="center" justify="center">
           <v-col align="center">
-            <v-text-field label=""> {{ playercountstore.defaultPlayerCount }} </v-text-field>
+            <v-text-field label=""> {{ playercount }} </v-text-field>
           </v-col>
           <v-col>
             <v-row>
-              <v-col align="center">
-                <v-btn density="compact" icon="mdi-plus"></v-btn>
+              <v-col align="center" @click="playercount++">
+                <v-btn icon="add"></v-btn>
               </v-col>
             </v-row>
             <v-row>
-              <v-col align="center">
-                <v-btn density="compact" icon="mdi-plus"></v-btn>
+              <v-col align="center" @click="playercount--">
+                <v-btn icon="remove"></v-btn>
               </v-col>
             </v-row>
           </v-col>
