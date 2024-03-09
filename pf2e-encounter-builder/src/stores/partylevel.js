@@ -1,17 +1,17 @@
-import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
 export const usePartyLevelStore = defineStore('partylevel', () => {
-  const partylevel = ref(0)
+  const partylevel = 0
+  const defaultPartyLevel = 1
 
-  const partylevelMinus4 = computed(() => partylevel.value - 4)
-  const partylevelMinus3 = computed(() => partylevel.value - 3)
-  const partylevelMinus2 = computed(() => partylevel.value - 2)
-  const partylevelMinus1 = computed(() => partylevel.value - 1)
-  const partylevelPlus1 = computed(() => partylevel.value + 1)
-  const partylevelPlus2 = computed(() => partylevel.value + 2)
-  const partylevelPlus3 = computed(() => partylevel.value + 3)
-  const partylevelPlus4 = computed(() => partylevel.value + 4)
+  const partylevelMinus4 = partylevel.value - 4
+  const partylevelMinus3 = partylevel.value - 3
+  const partylevelMinus2 = partylevel.value - 2
+  const partylevelMinus1 = partylevel.value - 1
+  const partylevelPlus1 = partylevel.value + 1
+  const partylevelPlus2 = partylevel.value + 2
+  const partylevelPlus3 = partylevel.value + 3
+  const partylevelPlus4 = partylevel.value + 4
 
   function increment() {
     partylevel.value++
@@ -27,6 +27,7 @@ export const usePartyLevelStore = defineStore('partylevel', () => {
 
   return {
     partylevel,
+    defaultPartyLevel,
     partylevelMinus4,
     partylevelMinus3,
     partylevelMinus2,
