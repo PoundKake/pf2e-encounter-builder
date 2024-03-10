@@ -1,16 +1,18 @@
 <script setup>
 import { usePlayerCountStore } from '@/stores/playercount'
 import { ref, watch } from 'vue'
+import { XPCalc } from './scripts/xpbudgetCalculations'
 
+const xpcal = new XPCalc()
 const playercountstore = usePlayerCountStore()
-
 const playercount = ref(playercountstore.defaultPlayerCount)
 
 // update party level store with the value of the party level
 watch(playercount, (updatedPlayerCount) => {
   playercountstore.playerCount = updatedPlayerCount
-  console.log(`Player Count Store Value: ${playercountstore.playerCount}`)
+  xpcal.adjustXPThreatForPlayerCount()
 })
+
 const elevationValue = 2
 </script>
 <template>
@@ -19,7 +21,7 @@ const elevationValue = 2
       <v-container>
         <v-row align="center" justify="center">
           <v-col>
-            <h1 class="h1-text-class">Current Player Count</h1>
+            <v-sheet class="text-h5">Current Player Count</v-sheet>
           </v-col>
         </v-row>
         <v-row align="center" justify="center">
@@ -28,13 +30,13 @@ const elevationValue = 2
           </v-col>
           <v-col>
             <v-row>
-              <v-col align="center" @click="playercount++">
-                <v-btn icon="add"></v-btn>
+              <v-col align="center">
+                <v-btn @click="playercount++" icon="add"></v-btn>
               </v-col>
             </v-row>
             <v-row>
-              <v-col align="center" @click="playercount--">
-                <v-btn icon="remove"></v-btn>
+              <v-col align="center">
+                <v-btn @click="playercount--" icon="remove"></v-btn>
               </v-col>
             </v-row>
           </v-col>

@@ -1,17 +1,18 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import { usePartyLevelStore } from '@/stores/partylevel'
-import { watch } from 'vue'
+import { XPCalc } from './scripts/xpbudgetCalculations'
 
+const xpcal = new XPCalc()
 const partylevelstore = usePartyLevelStore()
-
 const partylevel = ref(partylevelstore.defaultPartyLevel)
 
 // update party level store with the value of the party level
 watch(partylevel, (updatedPartyLevel) => {
-  partylevelstore.partylevel = updatedPartyLevel
-  console.log(`Party Level Store Value: ${partylevelstore.partylevel}`)
+  partylevelstore.currentpartylevel = updatedPartyLevel
+  xpcal.adjustCreatureXPForPartyLevel()
 })
+
 const elevationValue = 2
 </script>
 <template>
@@ -20,7 +21,7 @@ const elevationValue = 2
       <v-container>
         <v-row align="center" justify="center">
           <v-col>
-            <h1 class="h1-text-class">Current Party Level</h1>
+            <v-sheet class="text-h5">Current Party Level</v-sheet>
           </v-col>
         </v-row>
         <v-row align="center" justify="center">
@@ -45,8 +46,4 @@ const elevationValue = 2
   </v-container>
 </template>
 
-<style scoped>
-h1 {
-  font-size: 1.5em;
-}
-</style>
+<style scoped></style>
