@@ -75,7 +75,4 @@ const elevationValue = 2
 </template>
 
 <style>
-@media {
-  max-width: 1000px;
-}
 </style>
