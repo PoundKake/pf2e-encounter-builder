@@ -4,6 +4,7 @@ import CurrentEncounterBudget from '@/components/CurrentEncounterBudget.vue'
 import PartyLevelManager from '@/components/PartyLevelManager.vue'
 import PlayerCountManager from '@/components/PlayerCountManager.vue'
 import CreatureXPandRoleView from '@/components/CreatureXPandRoleView.vue'
+import EncountersCollectionView from '@/components/EncountersCollectionView.vue'
 
 const elevationValue = 2
 </script>
@@ -23,19 +24,15 @@ const elevationValue = 2
     <v-row><v-col></v-col></v-row>
 
     <!-- Party Level and Player Count Managers -->
-    <v-row no-gutters class="d-flex">
+    <v-row no-gutters class="d-flex justify-center">
       <!-- Party Level Manager -->
-      <v-col>
-        <v-sheet class="d-flex w-20">
-          <PartyLevelManager />
-        </v-sheet>
-      </v-col>
+      <v-sheet class="d-flex w-20">
+        <PartyLevelManager />
+      </v-sheet>
       <!-- Player Count Manager -->
-      <v-col>
-        <v-sheet class="d-flex w-20">
-          <PlayerCountManager />
-        </v-sheet>
-      </v-col>
+      <v-sheet class="d-flex w-20">
+        <PlayerCountManager />
+      </v-sheet>
     </v-row>
 
     <!-- Encounter Budgets -->
@@ -71,8 +68,22 @@ const elevationValue = 2
       </v-col>
       <v-col></v-col>
     </v-row>
+
+    <!-- Spacer Row -->
+    <v-row><v-col></v-col></v-row>
+
+    <!-- Encounters Encounters Collection -->
+    <v-row no-gutters class="d-flex mx-auto">
+      <v-col></v-col>
+      <v-col cols="8">
+        <v-sheet :elevation="elevationValue">
+          <div class="d-flex justify-center text-h5">Encounters Collection</div>
+          <EncountersCollectionView />
+        </v-sheet>
+      </v-col>
+      <v-col></v-col>
+    </v-row>
   </v-container>
 </template>
 
-<style>
-</style>
+<style></style>
