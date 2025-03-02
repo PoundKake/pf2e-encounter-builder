@@ -34,57 +34,43 @@ const elevationValue = 1
   <v-container>
     <v-expansion-panels class="mx-auto">
       <v-expansion-panel>
-        <v-expansion-panel-title>
-          <template v-slot:default="{ expanded }">
-            <v-row no-gutters>
-              <v-col> Charts for Nerds</v-col>
-              <v-col>
-                <v-fade-transition leave-absolute>
-                  <span v-if="expanded">
-                    <v-container>
-                      <v-row no-gutters class="d-flex">
-                        <!-- Current Encounter Budget -->
-                        <v-col cols="5" class="justify-center mx-auto">
-                          <v-sheet :elevation="elevationValue">
-                            <div class="d-flex justify-center text-h5">
-                              Current Encounter Budget
-                            </div>
-                            <CurrentEncounterBudget />
-                          </v-sheet>
-                        </v-col>
+        <v-expansion-panel-title> Charts for Nerds </v-expansion-panel-title>
+        <v-expansion-panel-text>
+          <v-container>
+            <v-row no-gutters class="d-flex">
+              <!-- Current Encounter Budget -->
+              <v-col cols="5" class="justify-center mx-auto">
+                <v-sheet :elevation="elevationValue">
+                  <div class="d-flex justify-center text-h5">Current Encounter Budget</div>
+                  <CurrentEncounterBudget />
+                </v-sheet>
+              </v-col>
 
-                        <!-- Default Encounter Budget -->
-                        <v-col cols="5" class="justify-center mx-auto">
-                          <v-sheet :elevation="elevationValue">
-                            <div class="d-flex justify-center text-h5">
-                              Encounter Budget Adjustments
-                            </div>
-                            <EncounterBudget />
-                          </v-sheet>
-                        </v-col>
-                      </v-row>
-
-                      <!-- Spacer -->
-                      <v-row>
-                        <v-col></v-col>
-                      </v-row>
-
-                      <!-- Creature XP and Role -->
-                      <v-row no-gutters class="d-flex mx-auto justify-center">
-                        <v-col cols="8">
-                          <v-sheet :elevation="elevationValue">
-                            <div class="d-flex justify-center text-h5">Creature XP and Roles</div>
-                            <CreatureXPandRoleView />
-                          </v-sheet>
-                        </v-col>
-                      </v-row>
-                    </v-container>
-                  </span>
-                </v-fade-transition>
+              <!-- Default Encounter Budget -->
+              <v-col cols="5" class="justify-center mx-auto">
+                <v-sheet :elevation="elevationValue">
+                  <div class="d-flex justify-center text-h5">Encounter Budget Adjustments</div>
+                  <EncounterBudget />
+                </v-sheet>
               </v-col>
             </v-row>
-          </template>
-        </v-expansion-panel-title>
+
+            <!-- Spacer -->
+            <v-row>
+              <v-col></v-col>
+            </v-row>
+
+            <!-- Creature XP and Role -->
+            <v-row no-gutters class="d-flex mx-auto justify-center">
+              <v-col cols="8">
+                <v-sheet :elevation="elevationValue">
+                  <div class="d-flex justify-center text-h5">Creature XP and Roles</div>
+                  <CreatureXPandRoleView />
+                </v-sheet>
+              </v-col>
+            </v-row>
+          </v-container>
+        </v-expansion-panel-text>
       </v-expansion-panel>
     </v-expansion-panels>
   </v-container>
