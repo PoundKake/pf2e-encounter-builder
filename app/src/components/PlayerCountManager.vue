@@ -13,7 +13,7 @@ watch(playercount, (updatedPlayerCount) => {
   xpcal.adjustXPThreatForPlayerCount()
 })
 
-const elevationValue = 2
+const elevationValue = 1
 </script>
 <template>
   <v-container>
