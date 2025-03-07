@@ -4,7 +4,7 @@ import CurrentEncounterBudget from '@/components/CurrentEncounterBudget.vue'
 import PartyLevelManager from '@/components/PartyLevelManager.vue'
 import PlayerCountManager from '@/components/PlayerCountManager.vue'
 import CreatureXPandRoleView from '@/components/CreatureXPandRoleView.vue'
-import EncountersCollectionView from '@/components/EncountersCollectionView.vue'
+import EncountersContainerView from '@/components/EncountersContainerView.vue'
 
 const elevationValue = 1
 </script>
@@ -78,10 +78,14 @@ const elevationValue = 1
   <!-- Encounters Encounters Collection -->
   <v-container>
     <v-row no-gutters class="d-flex justify-center mx-auto">
-      <v-sheet :elevation="elevationValue">
-        <div class="d-flex justify-center text-h5">Encounters Collection</div>
-        <EncountersCollectionView />
-      </v-sheet>
+      <v-col cols="8">
+        <v-sheet elevation="0">
+          <div class="d-flex justify-center text-h5">Encounters Collection</div>
+          <div>
+            <EncountersContainerView />
+          </div>
+        </v-sheet>
+      </v-col>
     </v-row>
   </v-container>
 </template>
